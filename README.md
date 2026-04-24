@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# 🏌️ Golf Charity Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web application that allows users to participate in monthly draws, win prizes, and contribute to charitable causes.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+- 🌐 Live Website: https://golf-charity-app-henna.vercel.app/
+- 👤 User Dashboard: https://golf-charity-app-henna.vercel.app/dashboard
+- 🛠 Admin Panel: https://golf-charity-app-henna.vercel.app/admin
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🔐 Admin Credentials
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Email: admin@gmail.com  
+- Password: admin123  
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📌 Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 👤 User
+- Signup & Login (Supabase Auth)
+- Subscribe (Monthly / Yearly)
+- Add Scores (1–45)
+- Select Charity
+- View Draw Results
+- View Winnings
+- Leaderboard Ranking
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🛠 Admin
+- Secure Admin Login
+- Run Monthly Draw
+- Auto Prize Distribution
+- View All Users
+- Manage Draw Results
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 💰 Business Logic
+
+- Each user contributes ₹100
+- Prize pool = total users × ₹100
+- Distribution:
+  - 5 Matches → 40%
+  - 4 Matches → 35%
+  - 3 Matches → 25%
+
+---
+
+## 🧠 Tech Stack
+
+- Frontend: React + TypeScript + Tailwind CSS
+- Backend: Supabase (Auth + Database)
+- Deployment: Vercel
+
+---
+
+## 🗄 Database Tables
+
+- users (Supabase Auth)
+- profiles
+- scores
+- draws
+- winners
+- subscriptions
+- charities
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone Repo
+ bash
+ - git clone https://github.com/kryptonnnnnn/golf-app.git
+ - cd golf-app
+
+### 2. Install Dependencies
+ - npm install
+
+### 3. Create .env file
+ - VITE_SUPABASE_URL=your_url
+ - VITE_SUPABASE_ANON_KEY=your_key
+
+### 4. Run Project
+ - npm run dev
