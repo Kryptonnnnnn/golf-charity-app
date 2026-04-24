@@ -7,8 +7,8 @@ A full-stack web application that allows users to participate in monthly draws, 
 ## 🚀 Live Demo
 
 - 🌐 Live Website: https://golf-charity-app-henna.vercel.app/
-- 👤 User Dashboard: https://golf-charity-app-henna.vercel.app/dashboard
-- 🛠 Admin Panel: https://golf-charity-app-henna.vercel.app/admin
+- 👤 User Dashboard: https://golf-charity-app-henna.vercel.app/login
+- 🛠 Admin Panel: https://golf-charity-app-henna.vercel.app/admin-login
 
 ---
 
